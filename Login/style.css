@@ -1,0 +1,68 @@
+.main-box {
+    text-align: center;
+    border-width: 10px;
+    background-color: rgb(46, 117, 231);
+    shape-outside: margin-box;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-top: 90px;
+    /* margin-bottom: 20px; */
+    max-width: 500px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+.pass-message {
+    color: #18be52;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    padding: 20;
+    border: 2px solid rgb(87, 143, 87);
+    background-color: rgb(109, 199, 199);
+    margin: 20px auto;
+}
+
+.main-box div {
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #9b07e5;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-colour 0.3s;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #501bce;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* input[type="number"] {
+    -moz-appearance: textfield;
+} */
+ able,th,td {
+    border: 1px black solid;
+ }
+ th,td{
+    padding: 9px;
+    text-align: center;
+ }
+ table{
+  border-spacing: 0px;
+  border-collapse: collapse;
+  width: 100%;
+ }
+ /* .content{
+    background-color: aqua;
+ } */
