@@ -85,6 +85,7 @@
 
  .nav-icons {
      gap: 1.5rem;
+     display: flex;
  }
 
  .icon {
@@ -254,8 +255,10 @@
      font-size: 3rem;
      font-weight: 300;
      text-transform: uppercase;
-     line-height: 100%;
-     max-width: 800px;
+     line-height: 50px;
+     max-width: 100%;
+     box-sizing: border-box;
+     margin: 0 auto;
  }
 
  .gradient-txt {
@@ -559,9 +562,10 @@
      text-transform: uppercase;
  }
 
- @media screen and (max-width:680px) {
+ @media screen and (max-width:600px) {
      .h1-heading {
-         font-size: 5rem;
+         font-size: 2rem;
+         text-align: center;
      }
 
      .big-para {
