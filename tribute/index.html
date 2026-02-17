@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute to Narendra Modi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+    <header>
+        <div class="container">
+            <div class="head">
+                <h1>Prime Minister Of India:</h1>
+                <h1 class="title">Narendra Modi</h1>
+            </div>
+            
+            <div class="img-wrapper">
+                <img src="img1.jpg" alt="Narendra Modi">
+            </div>
+
+            <div class="main">
+                <h3 class="h3-heading">FACTS</h3>
+                <ul>
+                    <li><strong>NAME</strong> - Narendra Modi</li>
+                    <li><strong>OCCUPATION</strong> - Prime Minister, Politician</li>
+                    <li><strong>BIRTH DATE</strong> - September 17, 1950 (Age: 75)</li>
+                    <li><strong>EDUCATION</strong> - Gujarat University, Delhi University</li>
+                    <li><strong>PLACE OF BIRTH</strong> - Vadnagar, India</li>
+                    <li><strong>FULL NAME</strong> - Narendra Damodardas Modi</li>
+                    <li><strong>ZODIAC SIGN</strong> - Virgo</li>
+                </ul>
+            </div>
+
+            <section class="content">
+                <h3><strong>SYNOPSIS</strong></h3>
+                <p>Narendra Modi grew up in the town of Vadnagar in India, the son of a street merchant. He entered politics as a youth and quickly rose through the ranks of Rashtriya Swayamsevak Sangh, a Hindu nationalist political party. Modi later joined the mainstream Bharatiya Janata Party in 1987, eventually becoming national secretary. In 2014 he was elected prime minister of India.</p>
+
+                <h3><strong>Background</strong></h3>
+                <p>Narendra Modi was born in the small town of Vadnagar, in northern Gujarat, India. His father was a street merchant who struggled to support the family. Young Narendra and his brother sold tea near a bus terminal to help out. Though an average student in school, Modi spent hours in the library and was known as a strong debater. In his early teens, he joined Akhil Bharatiya Vidyarthi Parishad, the student wing of Rashtriya Swayamsevak Sangh (RSS).</p>
+
+                <h3><strong>Life Dedicated to Politics</strong></h3>
+                <p>Modi had an arranged married at 18 but spent little time with his bride. He dedicated his life to politics in Gujarat, joining the RSS in 1971. During the 1975-77 political crisis, Prime Minister Indira Gandhi declared a state of emergency. Modi went underground and wrote a book, <em>Sangharsh ma Gujarat</em>. In 1978, Modi graduated from Delhi University and completed his master’s at Gujarat University in 1983. In 1987, he joined the BJP and was elected national secretary in 1995.</p>
+
+                <h3><strong>Gulbarg Massacre and Alleged Complicity</strong></h3>
+                <p>In February 2002, while Modi served as chief minister of Gujarat, a train was attacked, allegedly by Muslims. Violence spread, and Modi was accused of allowing the killings, but after investigations, the [Indian Supreme Court](https://main.sci.gov.in) concluded there was no evidence Modi was at fault. He was reelected chief minister in 2007 and 2012, focusing on economic growth and privatization.</p>
+
+                <h3><strong>Elected Prime Minister</strong></h3>
+                <p>In May 2014, he and his party were victorious, taking 282 of the 534 seats in the Lok Sabha. On May 26, 2014, Modi was sworn in as the 14th prime minister of India and the first to have been born after the country got its independence.</p>
+
+                <h3><strong>Policy</strong></h3>
+                <p>Since becoming prime minister, Modi has encouraged foreign businesses to invest via "Make in India". In 2014 he launched a "Clean India" campaign focusing on sanitation. In terms of foreign policy, he aligned himself with the United States, China, Japan, and Russia to improve economic ties. He has fostered diplomatic ties with many nations, although he has maintained a firm stance on security.</p>
+                
+                <!-- Updated Read More Button -->
+                <div class="read-more-container">
+                    <a href="https://www.britannica.com" target="_blank">
+                        <button class="action-btn">Read More Info</button>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </header>
+
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            btn.innerHTML = "☀️";
+        }
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            btn.innerHTML = isDark ? "☀️" : "🌙";
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>

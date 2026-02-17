@@ -1,0 +1,199 @@
+/* 1. CSS VARIABLES (Theme Colors) */
+:root {
+    --bg-color: #f2f5ed;
+    --text-color: #222;
+    --card-bg: #d8e2e2;
+    --list-bg: #ffffff;
+    --primary: #0000ff; /* Blue */
+    --accent: #e909e9;  /* Pink/Purple */
+    --btn-bg: rgba(151, 145, 189, 0.6);
+    --btn-text: #1414cc;
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --list-bg: #2c2c2c;
+    --primary: #bb86fc; /* Light Purple for Dark Mode */
+    --accent: #03dac6;  /* Teal for Dark Mode */
+    --btn-bg: #bb86fc;
+    --btn-text: #000;
+}
+
+/* 2. ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    transition: all 0.3s ease;
+    line-height: 1.6;
+}
+
+/* Applying Animation */
+.head, .img-wrapper, .main, h3, p, .read-more-container {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* 3. LAYOUT & CONTAINER */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.head {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--primary);
+    font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+.title {
+    color: var(--accent);
+}
+
+/* 4. IMAGE ZOOM EFFECT */
+.img-wrapper {
+    overflow: hidden; 
+    border-radius: 15px;
+    margin: 25px 0;
+    width: fit-content;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+    border-radius: 15px;
+}
+
+img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* 5. MAIN FACTS BOX */
+.main {
+    border: 2px solid var(--primary);
+    border-radius: 25px;
+    background-color: var(--card-bg);
+    padding: 25px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.h3-heading {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 30px;
+    font-family: 'Alegreya', serif;
+    margin-bottom: 15px;
+}
+
+ul { list-style: none; }
+
+ul li {
+    margin-bottom: 10px;
+    background-color: var(--list-bg);
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent);
+}
+
+/* 6. TYPOGRAPHY */
+h3 {
+    text-align: center;
+    font-size: clamp(22px, 4vw, 30px);
+    margin-top: 40px;
+    color: var(--primary);
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* 7. THEME TOGGLE BUTTON (Chand-Suraj) */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    border: 2px solid var(--accent);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+/* 8. READ MORE BUTTON */
+.read-more-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.action-btn {
+    background-color: var(--primary);
+    color: white;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 50px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Dark mode button text color fix */
+.dark-mode .action-btn {
+    color: #000;
+}
+
+.action-btn:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+     color: var(--primary);
+     background-color: white;
+}
+
+/* 9. MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+    body { padding: 15px; }
+    .main { padding: 15px; border-radius: 15px; }
+    #theme-toggle { width: 45px; height: 45px; font-size: 20px; top: 10px; right: 10px; }
+    .action-btn { width: 100%; } /* Mobile par full width button */
+}

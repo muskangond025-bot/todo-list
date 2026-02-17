@@ -1,0 +1,207 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All Collection-Shripat Furniture</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div class="arrow">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000"><path d="m287-446.67 240 240L480-160 160-480l320-320 47 46.67-240 240h513v66.66H287Z"/></svg>
+        </a>
+    </div>
+    <h1 class="logo">SHRIPAT FURNITURE</h1>
+    <h5 class="h5-heading">OUR COLLECTION</h5>
+    <div class="card">
+        <img src="brown.webp" alt="img">Brown Leather Three Seater Sofa Cum Bed
+        <img src="combed.webp" alt="img">
+        <img src="greenimg.png" alt="img">
+      <div class="btn"> <a href="fourth.html"> See More....</a></div>
+        <h4> NEW DESIGN UPLOADING....</h4>
+    </div>
+
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All Collection - Shripat Furniture</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .logo {
+            letter-spacing: 5px;
+            margin-top: 20px;
+            color: #222;
+        }
+
+        .h5-heading {
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        /* Back Arrow */
+        .arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            transition: transform 0.3s;
+        }
+        .arrow:hover { transform: scale(1.2); }
+
+        /* Grid Container */
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px 5%;
+        }
+
+        /* Modern Card Styling */
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card h4 {
+            font-size: 1.1rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .price-tag {
+            color: #b12704; /* Amazon style price color */
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* Buttons */
+        .btn-more {
+            text-decoration: none;
+            background: #000;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            transition: background 0.3s;
+            margin-top: 40px;
+        }
+
+        .btn-more:hover { background: #333; }
+
+        .footer-msg {
+            margin: 50px 0;
+            color: #888;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="arrow">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000"><path d="m287-446.67 240 240L480-160 160-480l320-320 47 46.67-240 240h513v66.66H287Z"/></svg>
+        </a>
+    </div>
+
+    <h1 class="logo">SHRIPAT FURNITURE</h1>
+    <h5 class="h5-heading">PREMIUM L-SHAPE COLLECTION</h5>
+
+    <div class="collection-grid">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="brown.webp" alt="Brown Sofa">
+            <h4>Corner Sofa Set (Brown)</h4>
+            <div class="price-tag">₹ 35,000</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="combed.webp" alt="Polyester Sofa">
+            <h4>Polyester L Shape Sofa</h4>
+            <div class="price-tag">₹ 48,000</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="blue-l-shape-sofa-set-500x500.webp" alt="Blue Sofa">
+            <h4>Blue Velvet L-Shape</h4>
+            <div class="price-tag">₹ 44,500</div>
+        </div>
+
+        <!-- Add cards 4 to 14 similarly -->
+        <div class="card">
+            <img src="wooden-l-shape-sofa-set-500x500.webp" alt="Wooden Sofa">
+            <h4>Wooden L Shape Sofa</h4>
+            <div class="price-tag">₹ 41,500</div>
+        </div>
+
+        <div class="card">
+            <img src="sky-blue-l-shape-sofa-set-500x500.webp" alt="Sky Blue">
+            <h4>Sky Blue L Shape</h4>
+            <div class="price-tag">₹ 44,500</div>
+        </div>
+
+        <div class="card">
+            <img src="4-seater-l-shape-sofa-set-500x500.webp" alt="4 Seater">
+            <h4>4 Seater Grey Sofa</h4>
+            <div class="price-tag">₹ 38,500</div>
+        </div>
+
+        <div class="card">
+            <img src="cream-l-shape-sofa-set-1000x1000.webp" alt="Cream Sofa">
+            <h4>Cream Velvet L-Shape</h4>
+            <div class="price-tag">₹ 42,500</div>
+        </div>
+
+        <div class="card">
+            <img src="maroon-l-shape-sofa-set-500x500.webp" alt="Maroon Sofa">
+            <h4>Maroon Royal L-Shape</h4>
+            <div class="price-tag">₹ 45,500</div>
+        </div>
+
+        <!-- Duplicate this .card div for the remaining items -->
+    </div>
+
+    <a href="fourth.html" class="btn-more">See More Collections</a>
+
+    <h4 class="footer-msg">NEW DESIGNS UPLOADING SOON...</h4>
+
+</body>
+</html>

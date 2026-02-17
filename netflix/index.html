@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix India – Watch TV Shows Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+    <div class="main">
+        <div class="overlay"></div>
+        <nav>
+            <div class="nav-left">
+                <img src="assets/img/Netflix_Logo_PMS.png" alt="Netflix" class="logo">
+            </div>
+            <div class="nav-right">
+                <select id="langSelect" class="lang-btn">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+                <button class="btn-red-sm">Sign In</button>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <h1 id="title">Unlimited movies,<br>shows and more</h1>
+            <p id="subtitle" style="font-weight: 900;">Starts at ₹149. Cancel at any time.</p>
+            <div class="cta-form">
+                <p style="font-weight: 500;padding-top: 40px;">Ready to watch? Enter your email to create or restart
+                    your membership.</p>
+                <div class="input-group">
+                    <input type="email" placeholder="Email address">
+                    <button class="btn-red-lg">Get Started &gt;</button>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="separation"></div>
+
+    <div class="separation"></div>
+    <!-- Latest Trending Movies Section -->
+    <section class="movies-section">
+        <h2 class="trend">Trending Now</h2>
+        <div class="carousel-container">
+            <button class="scroll-btn left-btn" onclick="scrollGrid(-1)">&#10094;</button>
+            <div class="movie-grid" id="movieGrid">
+                <div class="movie-row">
+                    <div class="movie-card"><span class="rank">1</span><img src="assets/img/image2.webp" alt="Movie">
+                    </div>
+                    <div class="movie-card"><span class="rank">2</span><img src="assets/img/image3.webp" alt="Movie">
+                    </div>
+                    <div class="movie-card"><span class="rank">3</span><img src="assets/img/image4.webp" alt="Movie">
+                    </div>
+                    <div class="movie-card"><span class="rank">4</span><img src="assets/img/image5.webp" alt="Movie">
+                    </div>
+                    <div class="movie-card"><span class="rank">5</span><img src="assets/img/image6.webp" alt="Movie">
+                    </div>
+                    <div class="movie-card"><span class="rank">6</span><img src="assets/img/image7.webp" alt="Movie">
+                    </div>
+                    <div class="movie-card"><span class="rank">7</span><img src="assets/img/image8.webp" alt="Movie">
+                    </div>
+                    <div class="movie-card"><span class="rank">8</span><img src="assets/img/image9.webp" alt="Movie">
+                    </div>
+                </div>
+            </div>
+
+            <button class="scroll-btn right-btn" onclick="scrollGrid(1)">&#10095;</button>
+        </div>
+    </section>
+
+
+    <!-- FAQ SECTION -->
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+            <div class="faq-box">
+                <div class="faq-question">What is Netflix? <span class="plus">+</span></div>
+                <div class="faq-answer">Netflix is a streaming service that offers a wide variety of award-winning TV
+                    shows, movies, anime, documentaries and more.</div>
+            </div>
+            <div class="faq-box">
+                <div class="faq-question">How much does Netflix cost? <span class="plus">+</span></div>
+                <div class="faq-answer">Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.</div>
+            </div>
+            <div class="faq-box">
+                <div class="faq-question">Where can i watch? <span class="plus">+</span></div>
+                <div class="faq-answer">Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on
+                    the web at netflix.com from your personal computer or on any internet-connected device that offers
+                    the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game
+                    consoles.
+
+                    You can also download your favourite shows with the iOS or Android app. Use downloads to watch while
+                    you're on the go and without an internet connection. Take Netflix with you anywhere.</div>
+            </div>
+            <div class="faq-box">
+                <div class="faq-question">How do i cancel?<span class="plus">+</span></div>
+                <div class="faq-answer">Netflix is flexible. You can easily cancel your account online in two clicks.
+                    There are no cancellation fees – start or stop your account anytime.</div>
+            </div>
+            <div class="faq-box">
+                <div class="faq-question">What can i watch on Netflix? <span class="plus">+</span></div>
+                <div class="faq-answer">Netflix has an extensive library of feature films, documentaries, TV shows,
+                    anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.</div>
+            </div>
+            <div class="faq-box">
+                <div class="faq-question">Is Netflix good for kids? <span class="plus">+</span></div>
+                <div class="faq-answer">The Netflix Kids experience is included in your membership to give parents
+                    control while kids enjoy family-friendly TV shows and films in their own space.
+
+                    Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of
+                    content kids can watch and block specific titles you don’t want kids to see.</div>
+            </div>
+            <div>
+                <p>Ready to watch? Enter your email to create or restart your membership.
+                </p>
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Email address">
+                <button class="btn-red-lg">Get Started &gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="separation"></div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Questions? Call <a href="#">000-800-919-1743</a></p>
+        <div class="footer-grid">
+            <a href="#">FAQ</a><a href="#">Help Centre</a><a href="#">Terms of Use</a><a href="#">Privacy</a>
+            <a href="#">Cookie Preferences</a><a href="#">Contact Us</a>
+        </div>
+        <p style="margin-top:20px">Netflix India</p>
+        <p style="margin-top:20px">This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -16,11 +16,60 @@
 <body>
     <div class="container">
 
-        <!-- XP & Level Dashboard (Naya Reward Panel) -->
+        <!-- XP & Level Dashboard (Naya Reward Panel)
         <div class="reward-panel">
             <div class="stat">⭐ <span id="user-points">0</span> XP</div>
             <div class="stat">🏆 Lvl <span id="user-level">1</span></div>
-        </div>
+        </div> -->
+        <div class="profile-section">
+    <div class="avatar-wrapper" onclick="document.getElementById('avatar-input').click()">
+        <!-- <img id="user-avatar" src="https://cdn-icons-png.flaticon.com" alt="Profile"> -->
+        <div class="upload-hint">Change</div>
+        <input type="file" id="avatar-input" accept="image/*" style="display:none" onchange="uploadAvatar(event)">
+    </div>
+    <div class="user-info">
+        <h2 id="display-name" onclick="editName()">Enter Name</h2>
+    </div>
+</div>
+
+        <div class="reward-panel">
+    <div class="stat">⭐ <span id="user-points">0</span> XP</div>
+    <div class="badge-display">
+        <span id="current-badge-icon" class="material-symbols-outlined" style="color: #ffd700; font-size: 30px;">military_tech</span>
+        <small id="badge-name">Rookie</small>
+        <div class="reward-panel">
+                    <span class="material-symbols-outlined" id="streak-fire" style="color: #ff5722;">local_fire_department</span>
+        <span id="user-streak">0</span> Days 
+    <!-- Purana XP aur Level yahan rahega 
+     <div class="stat streak-box"> -->
+        <!-- <span class="material-symbols-outlined" id="streak-fire" style="color: #ff5722;">local_fire_department</span>
+        <span id="user-streak">0</span> Days -->
+    <!-- </div> -->
+</div>
+<div class="leaderboard-card">
+    <div class="lb-header">
+        <h3>🥇 Your Personal Records</h3>
+        <span class="material-symbols-outlined">military_tech</span>
+    </div>
+    <div class="lb-row">
+        <span>🔥 Best Streak:</span>
+        <span id="best-streak" class="lb-value">0</span>
+    </div>
+    <div class="lb-row">
+        <span>✅ Total Tasks Done:</span>
+        <span id="total-tasks" class="lb-value">0</span>
+    </div>
+    <div class="lb-row">
+        <span>🎖️ Max Level Reached:</span>
+        <span id="max-level" class="lb-value">1</span>
+    </div>
+</div>
+
+
+    </div>
+    <div class="stat">🏆 Lvl <span id="user-level">1</span></div>
+</div>
+
 
         <div class="box">
             <!-- Purana Input Row -->
@@ -46,6 +95,33 @@
                     <input type="checkbox" id="is-daily"> Daily? (🔄)
                 </label>
             </div>
+            <div class="notes-container">
+    <div class="note-header">
+        <h3>📝 Quick Notes</h3>
+        <div class="note-colors">
+            <span class="dot" style="background:#fff;" onclick="changeNoteColor('#fff')"></span>
+            <span class="dot" style="background:#ffcccc;" onclick="changeNoteColor('#ffcccc')"></span>
+            <span class="dot" style="background:#ccffcc;" onclick="changeNoteColor('#ccffcc')"></span>
+            <span class="dot" style="background:#ccccff;" onclick="changeNoteColor('#ccccff')"></span>
+            <span class="dot" style="background:#ffffcc;" onclick="changeNoteColor('#ffffcc')"></span>
+        </div>
+        
+    </div>
+    <textarea id="personal-note" placeholder="Write your notes here..." oninput="saveNote()"></textarea> 
+    <div class="input-row">
+                <!-- <input type="text" id="task-input" placeholder="Enter a new task" autocomplete="off"> -->
+                <button id="addBtn">SAVE <span class="material-symbols-outlined"></span></button>
+            </div>
+</div>
+
+<!-- Chart Library -->
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+
+ <div class="stats-container">
+    <h3>📈 Weekly Performance</h3>
+    <canvas id="weeklyChart"></canvas>
+</div> 
+
         </div>
 
         <!-- Task List Container -->
@@ -55,7 +131,7 @@
     </div>
 
     <!-- 3. Success Sound (Ding sound on check) -->
-    <audio id="success-sound" src="https://actions.google.com" preload="auto"></audio>
+    <audio id="success-sound" src="applepay.mp3" preload="auto"></audio>
 
     <script src="script.js"></script>
 </body>

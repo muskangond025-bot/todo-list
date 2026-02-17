@@ -1,0 +1,21 @@
+.logo img{
+    width: 164px;
+}
+/* .logo{
+    height: 23px;
+    width: 40px;
+    background-color: blue;
+} */
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: segeoe UI;
+}
+.right ul{
+    display: flex;
+    gap: 34px;
+}
+.right ul li{
+    list-style: none;
+}
