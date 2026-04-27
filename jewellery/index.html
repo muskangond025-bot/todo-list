@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ORRA Jewellery</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- सही Font Awesome लिंक नीचे है -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">ORRAi</div>
+
+      <!-- दोनों को एक ही div में रखें -->
+            <ul class="nav-icons">
+                 <li>
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
+                    <a href="#" class="icon" id="search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://maps.google.com" class="icon">
+                        <i class="fa-solid fa-store"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://maps.google.com" class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="icon" id="menu">
+                        <i id="menu-icon" class="fa-solid fa-bag-shopping"></i>
+                    </a>
+                </li>
+    </nav>
+<!-- Main Navbar के ठीक नीचे इसे पेस्ट करें -->
+<div class="category-bar">
+    <ul class="category-list">
+        <li>Diamond <i class="fa-solid fa-chevron-down"></i></li>
+        <li>Platinum <i class="fa-solid fa-chevron-down"></i></li>
+        <li>Rings <i class="fa-solid fa-chevron-down"></i></li>
+        <li>Earrings <i class="fa-solid fa-chevron-down"></i></li>
+        <li>Necklace Sets <i class="fa-solid fa-chevron-down"></i></li>
+        <li>Everyday Essentials <i class="fa-solid fa-chevron-down"></i></li>
+    </ul>
+</div>
+<!-- Image Slider Section -->
+<div class="slider-container">
+    <div class="slides">
+        <!-- Slide 1 -->
+        <div class="slide fade">
+            <img src="d.jpg" alt="Diamond Collection">
+            <div class="slide-text">Exquisite Diamond Collection</div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide fade">
+            <img src="a.jpg" alt="Platinum Jewellery">
+            <div class="slide-text">Pure Platinum Elegance</div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide fade">
+            <img src="c.jpg" alt="Bridal Sets">
+            <div class="slide-text">The Royal Bridal Edit</div>
+        </div>
+        <div class="slide fade">
+            <img src="d.jpg" alt="Bridal Sets">
+            <div class="slide-text">The Royal Bridal Edit</div>
+        </div>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br><hr>
+<!-- Featured Collections -->
+<section class="collections">
+    <h2 class="section-title">Our Collections</h2>
+    <div class="collection-grid">
+        <div class="collection-card">
+            <img src="https://unsplash.com" alt="Rings">
+            <h3>Engagement Rings</h3>
+        </div>
+        <div class="collection-card">
+            <img src="https://unsplash.com" alt="Earrings">
+            <h3>Diamond Earrings</h3>
+        </div>
+        <div class="collection-card">
+            <img src="https://unsplash.com" alt="Necklace">
+            <h3>Gold Necklaces</h3>
+        </div>
+    </div>
+</section>
+
+<!-- Trending Products Grid -->
+<section class="products">
+    <h2 class="section-title">Trending Now</h2>
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <div class="product-img">
+                <img src="O.webp" alt="Product">
+                <span class="tag">Bestseller</span>
+            </div>
+            <div class="product-info">
+                <h4>ORRA Diamond Ring</h4>
+                <p class="price">₹45,000 <span class="old-price">₹55,000</span></p>
+                <button class="add-to-cart">Add to Bag</button>
+            </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="product-card">
+            <div class="product-img">
+                <img src="i.webp" alt="Product">
+            </div>
+            <div class="product-info">
+                <h4>Platinum Band</h4>
+                <p class="price">₹32,000</p>
+                <button class="add-to-cart">Add to Bag</button>
+            </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-card">
+            <div class="product-img">
+                <img src="OIP.webp" alt="Product">
+            </div>
+            <div class="product-info">
+                <h4>Floral Gold Earrings</h4>
+                <p class="price">₹18,500 <span class="old-price">₹22,000</span></p>
+                <button class="add-to-cart">Add to Bag</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>About ORRA</h4>
+            <p>Crafting timeless diamond and platinum jewellery since 1888.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Customer Service</h4>
+            <ul>
+                <li>Track Order</li>
+                <li>Free Shipping</li>
+                <li>15 Day Returns</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 ORRA Jewellery. All Rights Reserved.</p>
+    </div>
+</footer>
+
+  </body>
+  <script src="script.js"></script>
+</html>

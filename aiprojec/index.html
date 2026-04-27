@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS 3D | Future of Web</title>
+    
+    <!-- CDNs -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        
+        body {
+            margin: 0;
+            background-color: #050505;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            outline: none;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .neon-text {
+            text-shadow: 0 0 10px rgba(34, 211, 238, 0.8), 0 0 20px rgba(168, 85, 247, 0.4);
+        }
+
+        .neon-border:hover {
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+            border-color: rgba(34, 211, 238, 0.6);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-8 py-4">
+            <div class="text-2xl font-black tracking-tighter neon-text">NEXUS<span class="text-cyan-400">3D</span></div>
+            <div class="hidden md:flex space-x-10 font-medium">
+                <a href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="#services" class="hover:text-cyan-400 transition-colors">Services</a>
+                <a href="#product" class="hover:text-cyan-400 transition-colors">Product</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
+            <button class="bg-gradient-to-r from-purple-600 to-cyan-500 px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform">
+                Launch App
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="text-center z-10 px-4">
+            <h1 class="hero-title text-6xl md:text-8xl font-black mb-6 leading-tight">
+                EXPERIENCE THE <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">NEXT DIMENSION</span>
+            </h1>
+            <p class="hero-subtitle text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+                Building immersive digital experiences using cutting-edge 3D technology and modern design principles.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button class="px-10 py-4 bg-cyan-500 rounded-xl font-bold text-black hover:bg-cyan-400 transition-all">Get Started</button>
+                <button class="px-10 py-4 glass rounded-xl font-bold hover:bg-white/10 transition-all">View Portfolio</button>
+            </div>
+        </div>
+        <!-- Mouse Scroll Icon -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center pt-2">
+                <div class="w-1 h-2 bg-white rounded-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="relative min-h-screen py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center">Core <span class="text-purple-500">Services</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="service-card glass p-8 rounded-3xl neon-border transition-all group">
+                <div class="w-14 h-14 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 text-cyan-400 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">3D Development</h3>
+                <p class="text-gray-400">High-performance WebGL and Three.js solutions for the modern web browser.</p>
+            </div>
+            <div class="service-card glass p-8 rounded-3xl neon-border transition-all group">
+                <div class="w-14 h-14 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6 text-purple-400 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">UI/UX Design</h3>
+                <p class="text-gray-400">Interactive interfaces designed to convert users through visual storytelling.</p>
+            </div>
+            <div class="service-card glass p-8 rounded-3xl neon-border transition-all group">
+                <div class="w-14 h-14 bg-pink-500/20 rounded-2xl flex items-center justify-center mb-6 text-pink-400 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Fast Optimization</h3>
+                <p class="text-gray-400">Blazing fast load times with optimized assets and modern code splitting.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Showcase Section -->
+    <section id="product" class="relative min-h-screen py-20 px-6 flex items-center">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="product-info order-2 md:order-1">
+                <span class="text-cyan-400 font-bold tracking-widest uppercase mb-4 block">Interactive Demo</span>
+                <h2 class="text-4xl md:text-6xl font-black mb-6">THE NEURAL SPHERE</h2>
+                <p class="text-gray-400 text-lg mb-8">
+                    Interact with the 3D core. This system utilizes a custom vertex shader to simulate organic movement and gravitational response to your mouse.
+                </p>
+                <ul class="space-y-4 mb-10">
+                    <li class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                        <span>Dynamic Particle Physics</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                        <span>Real-time Light Calculation</span>
+                    </li>
+                </ul>
+                <button class="px-8 py-3 border border-white/20 rounded-lg hover:bg-white hover:text-black transition-all">Explore Tech Stack</button>
+            </div>
+            <div class="h-[400px] md:h-[600px] order-1 md:order-2" id="canvas-container-product">
+                <!-- This is a placeholder for context, the global canvas handles the visuals -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-20 border-t border-white/10 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Ready to build your <span class="text-cyan-400">Vision?</span></h2>
+            <p class="text-gray-500 mb-12">Join 50+ companies already building in 3D.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-12">
+                <input type="email" placeholder="Enter your email" class="glass px-6 py-4 rounded-xl md:w-96 focus:outline-none focus:border-cyan-400">
+                <button class="px-10 py-4 bg-white text-black font-bold rounded-xl hover:bg-cyan-400 transition-all">Get in touch</button>
+            </div>
+            <div class="text-gray-600 text-sm">
+                &copy; 2023 NEXUS 3D. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // --- THREE.JS ENGINE ---
+        let scene, camera, renderer, particles, productShape;
+        let mouseX = 0, mouseY = 0;
+        let targetX = 0, targetY = 0;
+
+        const windowHalfX = window.innerWidth / 2;
+        const windowHalfY = window.innerHeight / 2;
+
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 3;
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            document.body.appendChild(renderer.domElement);
+
+            // Create Particle Sphere
+            const particlesGeometry = new THREE.BufferGeometry();
+            const count = 3000;
+            const posArray = new Float32Array(count * 3);
+
+            for (let i = 0; i < count * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 8;
+            }
+
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            
+            const particlesMaterial = new THREE.PointsMaterial({
+                size: 0.005,
+                color: '#22d3ee',
+                transparent: true,
+                opacity: 0.8,
+                blending: THREE.AdditiveBlending
+            });
+
+            particles = new THREE.Points(particlesGeometry, particlesMaterial);
+            scene.push = particles;
+            scene.add(particles);
+
+            // Create Showcase Shape (Floating Torus Knot)
+            const geometry = new THREE.TorusKnotGeometry(0.5, 0.15, 150, 20);
+            const material = new THREE.MeshStandardMaterial({
+                color: '#a855f7',
+                wireframe: true,
+                emissive: '#a855f7',
+                emissiveIntensity: 0.5
+            });
+            productShape = new THREE.Mesh(geometry, material);
+            productShape.position.x = 2; // Position it to the right for the showcase section
+            scene.add(productShape);
+
+            // Lighting
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            const pointLight = new THREE.PointLight(0x22d3ee, 2);
+            pointLight.position.set(2, 3, 4);
+            scene.add(pointLight);
+
+            // Event Listeners
+            document.addEventListener('mousemove', onDocumentMouseMove);
+            window.addEventListener('resize', onWindowResize);
+
+            animate();
+        }
+
+        function onDocumentMouseMove(event) {
+            mouseX = (event.clientX - windowHalfX);
+            mouseY = (event.clientY - windowHalfY);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            targetX = mouseX * 0.001;
+            targetY = mouseY * 0.001;
+
+            // Rotate main particle sphere
+            particles.rotation.y += 0.002;
+            particles.rotation.x += (targetY - particles.rotation.x) * 0.05;
+            particles.rotation.y += (targetX - particles.rotation.y) * 0.05;
+
+            // Rotate product shape
+            productShape.rotation.x += 0.01;
+            productShape.rotation.z += 0.01;
+            
+            // Floating effect
+            productShape.position.y = Math.sin(Date.now() * 0.002) * 0.2;
+
+            renderer.render(scene, camera);
+        }
+
+        // --- GSAP ANIMATIONS ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Content Animation
+        gsap.from(".hero-title", {
+            y: 100,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power4.out"
+        });
+
+        gsap.from(".hero-subtitle", {
+            y: 50,
+            opacity: 0,
+            duration: 1.5,
+            delay: 0.3,
+            ease: "power4.out"
+        });
+
+        // Scroll Based 3D Camera Movements
+        gsap.to(camera.position, {
+            z: 5,
+            scrollTrigger: {
+                trigger: "#services",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1
+            }
+        });
+
+        // Move the product shape into view when scrolling to product section
+        gsap.to(productShape.position, {
+            x: 0,
+            scrollTrigger: {
+                trigger: "#product",
+                start: "top center",
+                end: "bottom center",
+                scrub: 1
+            }
+        });
+
+        // Service Cards Animation
+        gsap.from(".service-card", {
+            opacity: 0,
+            y: 100,
+            stagger: 0.2,
+            duration: 1,
+            scrollTrigger: {
+                trigger: "#services",
+                start: "top 80%"
+            }
+        });
+
+        // Initialize Everything
+        window.onload = () => {
+            init();
+        };
+
+    </script>
+</body>
+</html>

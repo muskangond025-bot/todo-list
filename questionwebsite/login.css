@@ -1,0 +1,157 @@
+/* 1. Reset & Global Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1c1c;
+  min-height: 100vh;
+  padding: 20px; /* Mobile par screen se chipke nahi */
+}
+
+/* 2. Main Box Container */
+.box {
+  position: relative;
+  width: 380px;
+  height: 640px; /* Height adjustment for all fields */
+  background: #1c1c1c;
+  border-radius: 50px 5px;
+  overflow: hidden;
+}
+
+/* 3. Animated Border Animation */
+.box::before,
+.box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 640px;
+  background: linear-gradient(60deg, transparent, #45f3ff, #45f3ff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.box::after {
+  background: linear-gradient(60deg, transparent, #d9138a, #d9138a);
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 4. Form Styling */
+form {
+  position: absolute;
+  inset: 4px; /* Thin border effect */
+  background: #28292d;
+  border-radius: 50px 5px;
+  z-index: 10;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title h1 {
+  color: #45f3ff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* 5. Input Fields Styling */
+.input-box {
+  width: 100%;
+}
+
+.label-color {
+  color: #9eb3b5;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-box input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #45f3ff;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  color: white;
+  transition: 0.3s;
+}
+
+.input-box input:focus {
+  border-color: #d9138a;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 6. Register Button */
+.input-box input[type="submit"] {
+  background: #d9138a;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  margin-top: 10px;
+  filter: drop-shadow(0 0 10px #d9138a);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.input-box input[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+/* 7. Bottom Link */
+.link-text {
+  text-align: center;
+  margin-top: 15px;
+  color: #9eb3b5;
+  font-size: 0.85rem;
+}
+
+.link-text a {
+  text-decoration: none;
+  color: #45f3ff;
+  font-weight: 700;
+}
+
+/* 8. MEDIA QUERIES (For Responsiveness) */
+
+/* Mobile Phones (Phones like iPhone, Samsung etc) */
+@media (max-width: 480px) {
+  .box {
+    width: 100%;       /* Full width on small screens */
+    max-width: 350px;  /* But not too big */
+    height: 620px;
+  }
+  
+  form {
+    padding: 30px 20px; /* Padding kam kar di */
+  }
+
+  .title h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Tablets (iPad etc) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .box {
+    width: 360px;
+  }
+}

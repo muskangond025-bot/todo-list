@@ -1,0 +1,227 @@
+/* 1. GLOBAL RESET & SMOOTH SCROLL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Mobile scroll fix */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  color: white;
+}
+
+/* 2. NAVBAR STYLING */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #00f2fe;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00f2fe;
+  text-shadow: 0 0 10px #00f2fe;
+}
+
+/* 3. HERO SECTION */
+header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 10% 50px;
+  width: 100%;
+  gap: 40px;
+}
+
+.content {
+  flex: 1;
+}
+
+.content h4 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+}
+
+.main img {
+  flex: 1;
+  max-width: 550px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+}
+
+/* NEON BUTTON */
+.content button, .submit-btn {
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000;
+  background: #00f2fe;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+  transition: 0.4s;
+}
+
+.content button:hover, .submit-btn:hover {
+  background: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.8);
+}
+
+/* 4. FEATURES SECTION */
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 10%;
+  background: #0a0a0a;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.feature-box {
+  text-align: center;
+  flex: 1;
+  min-width: 280px;
+  padding: 40px 20px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.feature-box i {
+  font-size: 2.5rem;
+  color: #00f2fe;
+  margin-bottom: 20px;
+}
+
+/* 5. CONTACT SECTION */
+.contact-section {
+  padding: 100px 10%;
+  text-align: center;
+  background: #050505;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.contact-section input, .contact-section textarea {
+  padding: 18px;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* 6. FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  background: #000;
+  color: #555;
+  border-top: 1px solid #111;
+}
+
+/* 7. MOBILE RESPONSIVE - Fixed for perfect fit */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .main {
+    flex-direction: column-reverse; /* Image niche, text upar */
+    text-align: center;
+    padding: 120px 5% 40px;
+    gap: 20px;
+  }
+
+  .main img {
+    max-width: 250px; /* Image size mobile ke liye adjust kiya */
+    width: 80%;
+    margin-top: 0;
+  }
+
+  .content h4 {
+    font-size: 2.2rem;
+  }
+
+  .features {
+    padding: 60px 5%;
+  }
+
+  .feature-box {
+    min-width: 100%; /* Boxes screen ki puri width lenge */
+  }
+
+  .contact-section {
+    padding: 60px 5%;
+  }
+}

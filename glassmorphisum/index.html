@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>electronic website</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="form-loader" class="form-spinner"></div>
+        <div class="heading">
+          <h1>Login Form</h1>
+        </div>
+        <div class="contain">
+          <div class="email">
+            Email Id:
+            <input type="text" />
+          </div>
+          <!-- <br /> -->
+          <div class="no">
+            Mobile No:
+            <input type="text" />
+          </div>
+          <div><button>Login</button></div>
+        </div>
+      </div>
+      <script>
+        window.onload = function () {
+          const loader = document.getElementById("form-loader");
+
+          // Ek dummy image object banate hain background image check karne ke liye
+          const bgImg = new Image();
+          bgImg.src = "img.jpg"; // Aapki image ka path
+
+          bgImg.onload = function () {
+            // Jaise hi image load hogi, spinner gayab ho jayega
+            loader.classList.add("loader-hidden");
+            console.log("Background Image Loaded! 2026 Updated.");
+          };
+        };
+      </script>
+    </header>
+  </body>
+</html>

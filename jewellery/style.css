@@ -1,0 +1,306 @@
+/* बेसिक सेटिंग */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+}
+
+/* Navbar का मुख्य ढांचा */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* लोगो बाएं और आइकन्स दाएं */
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #4a4a4a;
+}
+
+/* आइकन्स वाली लिस्ट */
+.nav-icons {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons li {
+    margin-left: 25px;
+}
+
+.icon {
+    color: #4a4a4a;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.icon:hover {
+    color: #b08d57; /* Gold टच */
+}
+
+/* सर्च कंटेनर स्टाइलिंग */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #f1f1f1;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+#search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    width: 0; /* शुरू में छुपा हुआ */
+    transition: 0.4s;
+}
+
+/* जब सर्च बार पर ध्यान जाए या होवर हो तो वो खुल जाए */
+.search-container:hover #search-input {
+    width: 150px; /* फैलने की चौड़ाई */
+}
+
+#search-btn {
+    font-size: 16px;
+}
+
+/* मोबाइल मेनू आइकॉन (Bars) */
+#menu-icon {
+    cursor: pointer;
+}
+.category-bar {
+    background-color: #ffffff;
+    border-top: 1px solid #eeeeee; /* हल्का सेपरेशन */
+    border-bottom: 1px solid #eeeeee;
+    padding: 10px 0;
+}
+
+.category-list {
+    display: flex;
+    justify-content: center; /* सब कुछ सेंटर में लाने के लिए */
+    list-style: none;
+    gap: 30px; /* आइटम्स के बीच की दूरी */
+}
+
+.category-list li {
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a4a4a;
+    cursor: pointer;
+    text-transform: uppercase; /* प्रीमियम लुक के लिए सारे अक्षर बड़े */
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.category-list li i {
+    font-size: 10px; /* छोटा तीर (Arrow) */
+    margin-left: 6px;
+    color: #b08d57; /* एरो को गोल्ड टच दिया */
+}
+
+.category-list li:hover {
+    color: #b08d57;
+}
+.slider-container {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    height: 500px; /* Aap ise apne hisaab se adjust kar sakte hain */
+}
+
+.slide {
+    display: none;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image ko stretch hone se bachayega */
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Next & Previous Buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transform: translateY(-50%);
+}
+
+.next { right: 0; border-radius: 3px 0 0 3px; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+/* Fading Animation */
+.fade {
+    animation: fadeAnim 1.5s;
+}
+
+@keyframes fadeAnim {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+/* --- Mobile Responsive Final Fix --- */
+@media screen and (max-width: 768px) {
+    
+    /* Navbar fix: Logo aur Icons ko sahi se set karne ke liye */
+    .navbar {
+        padding: 10px 3%;
+        flex-wrap: wrap; /* Items ko zarurat padne par niche bhej dega */
+    }
+
+    .nav-icons {
+        gap: 10px; /* Icons ke beech ka gap fixed kiya */
+    }
+
+    .nav-icons li {
+        margin-left: 5px; /* Margin kam kiya taaki sab fit ho jayein */
+    }
+
+    /* Category Bar Fix: "Earring" aur baaki items scroll karein */
+    .category-bar {
+        overflow-x: auto; 
+        display: block; /* Ensures scroll works */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .category-list {
+        display: flex;
+        justify-content: flex-start !important; /* Center se hata kar start pe kiya */
+        width: max-content; 
+        gap: 15px;
+        padding: 5px 15px;
+    }
+
+    /* Slider settings for S8 */
+    .slider-container {
+        height: 280px; 
+    }
+
+    .slide-text {
+        font-size: 14px;
+        bottom: 15px;
+        left: 10px;
+        padding: 5px 10px;
+        max-width: 70%;
+    }
+
+    /* Search bar settings for small screens */
+    .search-container {
+        padding: 5px 10px;
+    }
+    
+    .search-container:hover #search-input {
+        width: 60px; /* S8 ke liye chota width */
+    }
+}
+/* Section Titles */
+.section-title {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+/* Collection Grid */
+.collections { padding: 0 5%; }
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.collection-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+}
+.collection-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+.collection-card:hover img { transform: scale(1.05); }
+.collection-card h3 {
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+/* Product Grid */
+.products { padding: 50px 5%; background: #fffcf8; }
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.product-card {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #f0f0f0;
+    transition: 0.3s;
+}
+.product-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.product-img img { width: 100%; height: 250px; object-fit: contain; }
+.product-info { padding: 15px 0; text-align: center; }
+.price { color: #b08d57; font-weight: bold; margin: 10px 0; }
+.old-price { color: #999; text-decoration: line-through; font-size: 0.9rem; margin-left: 10px; }
+.add-to-cart {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    cursor: pointer;
+}
+.add-to-cart:hover { background: #b08d57; }
+
+/* Footer */
+.footer { background: #1a1a1a; color: white; padding: 50px 5% 20px; margin-top: 50px; }
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+}
+.footer-section h4 { margin-bottom: 20px; color: #b08d57; }
+.footer-section ul { list-style: none; }
+.footer-section li { margin-bottom: 10px; color: #ccc; cursor: pointer; }
+.social-links i { font-size: 1.5rem; margin-right: 15px; cursor: pointer; color: #ccc; }
+.footer-bottom { text-align: center; padding-top: 20px; font-size: 0.8rem; color: #777; }

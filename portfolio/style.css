@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0b0b0b;
+  color: #ffffff;
+}
+
+/* Nav Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(0, 0, 0, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .logo {
+  color: #00ffcc;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  color: #00ffcc;
+}
+
+/* Hero Section */
+header#home {
+  height: 100vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("muskan.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #00ffcc;
+  margin-bottom: 10px;
+}
+.btn a {
+    color: inherit; /* Button ka text color lega */
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Smooth Scrolling (Pehle se aapke code mein hai, check kar lein) */
+html {
+    scroll-behavior: smooth;
+}
+.btn {
+  background-color: #00ffcc;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+
+/* Section Basics */
+.section {
+  padding: 80px 10%;
+  text-align: center;
+}
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #00ffcc;
+}
+
+/* Services Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #333;
+  transition: 0.3s;
+}
+.card:hover {
+    border-color: #00ffcc; 
+  /* transform: translateY(-10px); */ 
+    background: #000000f5;
+  transform: scale(1.05);
+
+}
+
+/* --- Portfolio Grid Fix --- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* /* --- Flip Card CSS --- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  height: 300px;
+  perspective: 1000px; /* 3D effect ke liye */
+  cursor: pointer;
+}
+
+.project-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; /* 3D effect enable karta hai */
+}
+
+.project-card:hover .project-inner {
+  transform: rotateY(180deg); /* Card ko flip karega */
+}
+
+.project-front,
+.project-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Peeche ka hissa chhupane ke liye */
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 1px solid #333;
+}
+
+/* Shuru mein sirf Name dikhega */
+.project-front {
+  background-color: #1a1a1a;
+  color: #00ffcc;
+}
+
+/* Hover karne par Image dikhegi */
+.project-back {
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(180deg); /* Ye side shuru mein palti hui hogi */
+}
+
+/* Images assignment */
+.project1 {
+  background-image: url("to.jpg");
+}
+.project2 {
+  background-image: url("interorior.jpg");
+}
+.project3 {
+  background-image: url("furniture.jpg");
+}
+.project4 {
+  background-image: url("fruit.jpg");
+}
+
+/* Image ke upar halka glow effect */
+.project-back::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 255, 204, 0.2); */
+  border-radius: 15px;
+}
+/* Contact Form */
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid #333;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  background: #0b0b0b;
+  border: 1px solid #444;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+}
+.contact-form input:focus {
+  border-color: #00ffcc;
+}
+.contact-container:hover{
+     border-color: #ffffff;
+     border-radius: 20px;
+}
+
+/* Footer */
+footer {
+  padding: 40px 20px;
+  background: #080808;
+  border-top: 1px solid #222;
+  text-align: center;
+}
+.footer-logo {
+  font-size: 1.8rem;
+  color: #00ffcc;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+.social-links a {
+  color: #00ffcc;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+.social-links a:hover {
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    padding: 20px;
+  }
+  nav ul {
+    display: none;
+  } /* Mobile par menu chhuppa diya (Aap hamburger add kar sakte hain) */
+  h1 {
+    font-size: 2.5rem;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}

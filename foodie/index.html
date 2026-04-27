@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foodie Delight</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fonts & Icons -->
+    <!-- <link href="https://googleapis.com" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+    <nav id="main-nav">
+        <div class="logo">FOODIE<span>.</span></div>
+
+        <div class="menu-icon" id="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact" class="btn-nav">Order Now</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Delicious <span>Food</span> <br />Waiting For You</h1>
+            <p>Experience the best organic and healthy food in town prepared by world-class chefs.</p>
+            <a href="#menu" class="hero-btn">View Menu</a>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <h2 class="section-title" data-aos="fade-down">About Our Kitchen</h2>
+        <div class="glass-card" data-aos="zoom-in">
+            <p>At our kitchen, we believe in the magic of fresh ingredients. From our hand-pressed beef patties to our farm-fresh greens, every dish is crafted with love.</p>
+            <p class="scroll-tip">Scroll back up to see the glass effect transition!</p>
+        </div>
+    </section>
+
+    <section id="menu">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Our Special <span>Menu</span></h2>
+            <p>Freshly prepared delicious meals for you</p>
+        </div>
+
+        <div class="menu-container">
+            <div class="menu-card" data-aos="flip-left">
+                <div class="menu-img">
+                    <img src="burger.jpg" alt="Burger" />
+                    <span class="price">$12.00</span>
+                </div>
+                <div class="menu-info">
+                    <h3>Classic Beef Burger</h3>
+                    <p>Juicy beef patty with fresh lettuce, tomato, and our secret sauce.</p>
+                    <button class="order-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="menu-card" data-aos="flip-left" data-aos-delay="200">
+                <div class="menu-img">
+                    <img src="pizza.jpg" alt="Pizza" />
+                    <span class="price">$15.00</span>
+                </div>
+                <div class="menu-info">
+                    <h3>Margherita Pizza</h3>
+                    <p>Fresh mozzarella, basil leaves, and extra virgin olive oil.</p>
+                    <button class="order-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="menu-card" data-aos="flip-left" data-aos-delay="400">
+                <div class="menu-img">
+                    <img src="salad.jpg" alt="Salad" />
+                    <span class="price">$10.00</span>
+                </div>
+                <div class="menu-info">
+                    <h3>Healthy Bowl</h3>
+                    <p>Quinoa, avocado, chickpeas, and fresh greens with lemon dressing.</p>
+                    <button class="order-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-box">
+                <div class="logo">FOODIE<span>.</span></div>
+                <p>Savor the best flavors in town. We serve organic, fresh, and delicious meals every day.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#menu">Our Menu</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact Us</h3>
+                <p>📍 123 Foodie Street, Flavor Town</p>
+                <p>📞 +91 98765 43210</p>
+                <p>✉️ hello@foodiedelight.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Foodie Delight | Designed with ❤️</p>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

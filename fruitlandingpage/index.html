@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PUNCH | Fresh Mango Energy</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+    <!-- Floating Leaves Background -->
+    <div class="leaf-container">
+        <img src="download-removebg-preview.png" class="leaf" style="left: 5%; animation-delay: 0s">
+        <img src="images-removebg-preview.png" class="leaf" style="left: 25%; animation-delay: 5s">
+        <img src="images-removebg-preview.png" class="leaf" style="left: 55%; animation-delay: 2s">
+        <img src="images-removebg-preview.png" class="leaf" style="left: 85%; animation-delay: 7s">
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">PUNCH<span>.</span></div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Benefits</a></li>
+            <li><a href="#contact">Order Now</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <div class="main">
+            <div class="content" data-aos="fade-right">
+                <h4 class="badge">🔥 NEW ARRIVAL</h4>
+                <h1>REAL MANGO<br /><span class="highlight">PURE PUNCH.</span></h1>
+                <p>No preservatives. No added sugar. Just 100% hand-picked Alphonso mangoes in a bottle.</p>
+                <div class="btn-group">
+                    <button class="cta-btn">Buy Now</button>
+                    <button class="secondary-btn">View Menu</button>
+                </div>
+            </div>
+            <div class="img-container" data-aos="zoom-in" data-aos-delay="200">
+                <div class="glow-circle"></div>
+                <img src="bottle-removebg-preview.png" alt="Juice" class="hero-img" />
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="feature-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-circle"><i class="fas fa-leaf"></i></div>
+            <h3>100% Organic</h3>
+            <p>Directly sourced from organic farms of Ratnagiri.</p>
+        </div>
+        <div class="feature-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-circle"><i class="fas fa-bolt"></i></div>
+            <h3>Instant Glow</h3>
+            <p>Packed with Vitamin A & C for healthy skin.</p>
+        </div>
+        <div class="feature-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-circle"><i class="fas fa-snowflake"></i></div>
+            <h3>Cold Pressed</h3>
+            <p>Kept chilled to lock in all natural nutrients.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section" data-aos="fade-up">
+        <div class="contact-card">
+            <h2>Get Your Daily Punch</h2>
+            <form id="contactForm" action="https://formsubmit.co" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required />
+                <input type="email" name="email" placeholder="Email Address" required />
+                <textarea name="message" placeholder="Address..." rows="4" required></textarea>
+                <button type="submit" class="submit-btn">Get My Discount</button>
+            </form>
+            <div id="thankYouMessage" style="display: none">
+                <h3>🎉 Order Received! Check your email.</h3>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2024 PUNCH Beverages India.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        
+        // Hamburger Menu Toggle
+        const menu = document.querySelector("#mobile-menu");
+        const menuLinks = document.querySelector(".nav-links");
+        const menuIcon = document.querySelector("#mobile-menu i");
+
+        menu.addEventListener("click", () => {
+            menuLinks.classList.toggle("active");
+            menuIcon.classList.toggle("fa-bars");
+            menuIcon.classList.toggle("fa-times");
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuLinks.classList.remove('active');
+                menuIcon.classList.add("fa-bars");
+                menuIcon.classList.remove("fa-times");
+            });
+        });
+    </script>
+</body>
+</html>

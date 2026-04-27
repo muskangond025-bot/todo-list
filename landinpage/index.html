@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAX. HEADPHONES</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="data:," />
+
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- CORRECTED FONT AWESOME (Taaki icons dikhein) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">MAX.</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header id="home">
+      <div class="main">
+        <div class="content" data-aos="fade-right">
+          <h4>CHOOSE YOUR STYLE</h4>
+          <p>Experience the ultimate sound quality.</p>
+          <button type="button">Buy Now</button>
+        </div>
+        <img src="image1.png" alt="headphone" data-aos="zoom-in" />
+      </div>
+    </header>
+
+    <section id="features" class="features">
+      <div class="feature-box" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-headphones"></i>
+        <h3>Premium Sound</h3>
+        <p>Crystal clear audio for every beat.</p>
+      </div>
+      <div class="feature-box" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-battery-full"></i>
+        <h3>Long Battery</h3>
+        <p>Up to 40 hours of playback time.</p>
+      </div>
+      <div class="feature-box" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-bluetooth-b"></i>
+        <h3>Wireless</h3>
+        <p>Seamless Bluetooth 5.0 connectivity.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section" data-aos="fade-up">
+      <h2>Connect with MAX.</h2>
+      <!-- IMPORTANT: Replace YOUR_EMAIL with your real email -->
+      <form id="contactForm" action="https://formsubmit.co" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea
+          name="message"
+          placeholder="Message"
+          rows="5"
+          required
+        ></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+
+      <div
+        id="thankYouMessage"
+        style="display: none; color: #00f2fe; margin-top: 20px"
+      >
+        <h3>🎉 Thank You! Your message has been sent.</h3>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 MAX. Audio. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+      AOS.init({ duration: 1000, once: false });
+
+      const contactForm = document.getElementById("contactForm");
+      const thankYouMessage = document.getElementById("thankYouMessage");
+
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        // Form ko JSON format me convert karna AJAX ke liye
+        const data = Object.fromEntries(formData.entries());
+
+        fetch(contactForm.action, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            contactForm.style.display = "none";
+            thankYouMessage.style.display = "block";
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("Error! Check internet or Email Activation.");
+          });
+      });
+    </script>
+  </body>
+</html>

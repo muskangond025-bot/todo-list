@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Profile | Quiz Master</title>
+    <link rel="stylesheet" href="profile.css">
+    <!-- FontAwesome Fixed Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+</head>
+
+<body>
+    <!-- Fixed Navbar -->
+    <header class="navbar">
+        <div class="logo">QUIZ<span>MASTER</span></div>
+        <nav class="nav-links">
+            <a href="home.html"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="edit-profile.html"><i class="fa-solid fa-user-pen"></i> Settings</a>
+            <a href="index.html" class="logout-btn"><i class="fa-solid fa-power-off"></i> Logout</a>
+        </nav>
+    </header>
+
+    <!-- Profile Card Section -->
+    <div class="profile-card">
+        <div class="content-wrapper">
+            <!-- Image Section -->
+            <div class="img-box">
+                <!-- Default Placeholder Image Added -->
+                <img id="profile-display" src="https://cdn-icons-png.flaticon.com" alt="Profile">
+                <label for="upload-photo" class="camera-btn">
+                    <i class="fa-solid fa-camera"></i>
+                </label>
+                <input type="file" id="upload-photo" accept="image/*" hidden>
+            </div>
+
+            <!-- User Info -->
+            <h2 id="user-name">Guest User</h2>
+            <p id="user-email">no-email@example.com</p>
+            <div class="badge">Quiz Learner</div>
+
+            <!-- Stats -->
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="val">0</span>
+                    <span class="lab">Quizzes</span>
+                </div>
+                <div class="stat-item">
+                    <span class="val">--</span>
+                    <span class="lab">Rank</span>
+                </div>
+                <div class="stat-item">
+                    <span class="val">0</span>
+                    <span class="lab">Score</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <button onclick="window.location.href='edit-profile.html'" class="edit-btn">Edit Profile</button>
+            <a href="home.html" class="back-link">Back to Dashboard</a>
+        </div>
+    </div>
+
+    <script>
+        // Image Update Script (Fixed Index)
+        const upload = document.getElementById('upload-photo');
+        const img = document.getElementById('profile-display');
+        
+        upload.addEventListener('change', function () {
+            const file = this.files[0]; // Files array check
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => { img.src = e.target.result };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // LocalStorage Data Fetch
+        window.onload = () => {
+            const name = localStorage.getItem('userName');
+            const email = localStorage.getItem('userEmail');
+            if (name) document.getElementById('user-name').innerText = name;
+            if (email) document.getElementById('user-email').innerText = email;
+        }
+    </script>
+</body>
+</html>

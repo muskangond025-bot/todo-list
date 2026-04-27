@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #23242a;
+    color: #333;
+}
+
+header {
+    background-color: #3b8beb;
+    color: white;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    box-shadow: 0 2px 5px rgba (0, 0, 0, 0.1);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.welcome-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+.welcome-section h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 0 10%;
+    margin-bottom: 50px;
+}
+.card {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-bottom: 5px solid #3b8beb;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3b8beb;
+}
+.card:hover {
+    transform: translateY(-10px);
+    background-color: #3b8beb;
+    color: white;
+    box-shadow: 0 15px 30px rgba(59, 139, 235, 0.2);
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2c3e50;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

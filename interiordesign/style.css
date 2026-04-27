@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* 1. Global Reset & Basic Styling */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  /* 's' जोड़ना ज़रूरी है वरना transition काम नहीं करेगा */
+  transition: all 0.5s ease; 
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  overflow-x: hidden; /* मोबाइल पर साइड स्क्रॉल रोकने के लिए */
+}
+
+/* 2. Hero Section */
+.homepg {
+  height: 100vh;
+  width: 100%;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('spacejoy-PyeXkOVmG1Y-unsplash.jpg'); /* इमेज पाथ चेक करें */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+/* 3. Navbar Layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  width: 100%;
+}
+
+/* 4. Logo Styling (SVG) */
+.logo svg {
+  height: 60px; /* डेस्कटॉप के लिए साइज */
+  width: auto;
+  display: block;
+}
+
+/* 5. Navigation Links */
+.navbar-items ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-items ul li {
+  margin: 0 15px;
+}
+
+.navbar-items ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.navbar-items ul li a:hover {
+  color: #FFD700; /* गोल्ड कलर होवर पर */
+}
+
+/* 6. Burger Icon (Hidden by default) */
+.burger {
+  display: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 30px;
+}
+
+/* 7. Mobile Responsive Logic */
+@media (max-width: 768px) {
+  .logo svg {
+    height: 45px; /* मोबाइल पर लोगो थोड़ा छोटा */
+  }
+
+  .burger {
+    display: block; /* मोबाइल पर दिखेगा */
+  }
+
+  .navbar-items {
+    display: none; /* शुरू में बंद रहेगा */
+    position: absolute;
+    top: 100%; /* नेवबार के ठीक नीचे */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 20px 0;
+    z-index: 10;
+  }
+
+  /* JS के जरिए इस क्लास को toggle करेंगे */
+  .navbar-items.v-class {
+    display: block;
+  }
+
+  .navbar-items ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-items ul li {
+    margin: 15px 0;
+  }
+}

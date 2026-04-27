@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Dev. Portfolio</title>
+
+    <!-- Google Font for better look -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Library for Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">WEBD.</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+<header id="home" data-aos="fade-down">
+    <h1>I'm a <span id="typing-h1"></span></h1>
+    <p><span id="typing-p"></span></p>
+    <button class="btn"><a href="#work-section">View My Work</a></button>
+</header>
+    <hr />
+    <!-- Services Section -->
+    <section id="services" class="section">
+      <h2 class="title" data-aos="fade-up">My Services</h2>
+      <div class="grid">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Web Development</h3>
+          <p>Clean, modern, and responsive websites using the latest tech.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <h3>UI/UX Design</h3>
+          <p>User-friendly interfaces that look great on any device.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+          <h3>SEO Optimization</h3>
+          <p>Making sure your site ranks high on search engines.</p>
+        </div>
+      </div>
+    </section>
+<div id="work-section" class="portfolio-grid" data-aos="fade-up">
+    <!-- Project 1 -->
+    <div class="project-card" data-aos="zoom-in">
+        <div class="project-inner">
+            <div class="project-front">Project One</div>
+            <div class="project-back project1"></div>
+        </div>
+    </div>
+    <!-- Project 2 -->
+    <div class="project-card" data-aos="zoom-in">
+        <div class="project-inner">
+            <div class="project-front">Project Two</div>
+            <div class="project-back project2"></div>
+        </div>
+    </div>
+    <!-- Project 3 -->
+    <div class="project-card" data-aos="zoom-in">
+        <div class="project-inner">
+            <div class="project-front">Project Three</div>
+            <div class="project-back project3"></div>
+        </div>
+    </div>
+    <!-- Project 4 -->
+    <div class="project-card" data-aos="zoom-in">
+        <div class="project-inner">
+            <div class="project-front">Project Four</div>
+            <div class="project-back project4"></div>
+        </div>
+    </div>
+</div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" data-aos="fade-up">
+      <h2 class="title">Get In Touch</h2>
+      <div class="contact-container">
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">WEBD.</div>
+        <p>&copy; 2026 All Rights Reserved. Designed by Muskan.</p>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-instagram"></i>Instagram</a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+          <a href="#"><i class="fa-brands fa-github"></i>GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+  </body>
+  <!-- Typed.js Library (Body tag ke end mein add karein) -->
+<script src="https://unpkg.com/typed.js@2.0.12"></script>
+<script>
+  var typed = new Typed("#typing-h1", {
+    strings: ["Web Developer", "UI/UX Designer", "SEO Specialist"],
+    typeSpeed: 100,
+    backSpeed: 100,
+    loop: true
+  });
+
+  var typed2 = new Typed("#typing-p", {
+    strings: ["I create beautiful and functional websites.", "I design intuitive user experiences.", "I optimize websites for better search engine rankings."],
+    typeSpeed: 100,
+    backSpeed: 100,
+    loop: true
+  });
+</script>
+
+</html>

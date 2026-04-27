@@ -76,10 +76,15 @@
 
  /* HEADER PART */
  .navbar {
-     /* background: rgba(14, 5, 7, 0.063); */
+      /* background: rgba(14, 5, 7, 0.063);  */
      background: rgb(0, 0, 0);
      height: 13vh;
-     position: relative;
+     position: fixed;
+     width: 100%;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+
  }
 
  .logo {
@@ -131,6 +136,7 @@
      height: calc(100vh-13vh);
      justify-content: center;
      position: relative;
+     padding-top: 20px;
  }
 
  .hero-section::before {
@@ -498,6 +504,59 @@
      line-height: 100%;
      margin-block: 1.8rem;
  }
+
+ /* Container ko relative banaya taaki icon iske andar rahe */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15); /* Transparent look */
+    border-radius: 2rem;
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: fit-content;
+}
+
+/* Input field ki basic styling */
+#search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding-right: 35px; /* Icon ke liye jagah chhodi */
+    width: 160px;
+    font-size: 0.95rem;
+}
+
+#search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Icon ko input ke andar right side par fix kiya */
+#search-btn {
+    position: absolute;
+    right: 10px; /* Container ke right se gap */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center karne ke liye */
+    color: var(--golden-hour) !important;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 2;
+}
+
+/* Hover effect */
+#search-btn:hover {
+    transform: translateY(-50%) scale(1.2);
+    color: white !important;
+}
+
+/* Focus hone par border color change */
+.search-container:focus-within {
+    border-color: var(--golden-hour);
+    background: rgba(255, 255, 255, 0.25);
+}
+
 
  .input-container {
      max-width: 300px;

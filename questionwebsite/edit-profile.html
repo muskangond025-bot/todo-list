@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile | Quiz Master</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+    <div class="profile-card">
+        <div class="content-wrapper">
+            <h2 style="margin-bottom: 20px; color: #45f3ff;">Edit Details</h2>
+
+            <div class="edit-form" style="width: 100%; text-align: left;">
+                <label style="color: #9eb3b5; font-size: 0.8rem;">Full Name</label>
+                <input type="text" id="edit-name" placeholder="Enter new name"
+                    style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid #45f3ff; border-radius: 8px; color: white; margin: 5px 0 20px 0; outline: none;">
+
+                <label style="color: #9eb3b5; font-size: 0.8rem;">Email Address</label>
+                <input type="email" id="edit-email" placeholder="Enter new email"
+                    style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid #45f3ff; border-radius: 8px; color: white; margin: 5px 0 20px 0; outline: none;">
+            </div>
+
+            <button class="edit-btn" onclick="saveChanges()" style="margin-top: 10px;">Save Changes</button>
+            <a href="profile.html" class="back-link">Cancel</a>
+        </div>
+    </div>
+
+    <script>
+        // Pehle se save data ko input boxes mein bharna
+        window.onload = () => {
+            const name = localStorage.getItem('userName');
+            const email = localStorage.getItem('userEmail');
+            if (name) document.getElementById('edit-name').value = name;
+            if (email) document.getElementById('edit-email').value = email;
+        }
+
+        // Data save karke Profile page par bhejna
+        function saveChanges() {
+            const newName = document.getElementById('edit-name').value;
+            const newEmail = document.getElementById('edit-email').value;
+
+            if (newName && newEmail) {
+                localStorage.setItem('userName', newName);
+                localStorage.setItem('userEmail', newEmail);
+                alert("Profile Updated Successfully!");
+                window.location.href = "profile.html"; // Wapas profile par bhejna
+            } else {
+                alert("Please fill all fields!");
+            }
+        }
+    </script>
+</body>
+
+</html>

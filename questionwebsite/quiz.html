@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master | Final Result</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+    <style>
+        /* 1. Global Setup */
+        @import url('https://fonts.googleapis.com');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        body {
+            background-color: #1c1c1c;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        /* 2. Navbar */
+        .navbar {
+            position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+            background: #1c1c1c; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 8%; z-index: 1000;
+            border-bottom: 2px solid #45f3ff; box-shadow: 0 0 15px rgba(69, 243, 255, 0.3);
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #fff; }
+        .logo span { color: #45f3ff; text-shadow: 0 0 10px #45f3ff; }
+        .nav-links a { color: #9eb3b5; text-decoration: none; margin-left: 25px; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: #45f3ff; }
+
+        /* 3. Quiz & Result Box */
+        .quiz-container {
+            max-width: 600px; width: 92%;
+            margin: 20px auto; padding: 35px;
+            background: white; border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            text-align: center; color: #333;
+        }
+
+        .timer-box {
+            font-size: 1.2rem; font-weight: 700; color: #d9138a;
+            margin-bottom: 20px; padding: 8px 20px;
+            border: 2px solid #d9138a; border-radius: 50px;
+            display: inline-block;
+        }
+
+        /* 4. Option Buttons */
+        .option-btn {
+            display: block; width: 100%; padding: 14px; margin: 12px 0;
+            border: 2px solid #3b8beb; border-radius: 12px;
+            background: white; color: #3b8beb; cursor: pointer;
+            transition: 0.3s; font-size: 1rem; font-weight: 600;
+        }
+        .option-btn:hover { background-color: #3b8beb; color: white; transform: translateY(-2px); }
+
+        /* Answer Feedback */
+        .correct { background-color: #2ecc71 !important; color: white !important; border-color: #27ae60 !important; }
+        .wrong { background-color: #e74c3c !important; color: white !important; border-color: #c0392b !important; }
+        .disabled { pointer-events: none; opacity: 0.7; }
+
+        /* 5. Result Section Styles */
+        .result-box { display: none; padding: 10px; }
+        .result-box h2 { font-size: 2.2rem; margin-bottom: 10px; color: #1c1c1c; }
+        .status-msg { font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; }
+        .pass { color: #2ecc71; }
+        .fail { color: #e74c3c; }
+        
+        .score-text { font-size: 1.2rem; margin-bottom: 25px; color: #555; }
+
+        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .action-btn {
+            padding: 12px 25px; border: none; border-radius: 10px;
+            cursor: pointer; font-weight: 700; font-size: 1rem; transition: 0.3s;
+        }
+        .retry-btn { background: #d9138a; color: white; }
+        .home-btn { background: #1c1c1c; color: white; }
+        .action-btn:hover { transform: scale(1.05); filter: brightness(1.2); }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">QUIZ<span>MASTER</span></div>
+        <nav class="nav-links">
+            <a href="home.html"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="index.html" class="logout-btn"><i class="fa-solid fa-power-off"></i> Logout</a>
+        </nav>
+    </header>
+
+    <div class="quiz-container">
+        <!-- Quiz UI -->
+        <div id="quiz-ui">
+            <div class="timer-box"><i class="fa-regular fa-clock"></i> <span id="time-left">15</span>s</div>
+            <h1 id="category-title" style="color: #3b8beb; text-transform: capitalize;">Quiz</h1>
+            <hr style="margin: 20px 0; opacity: 0.2;">
+            <h2 id="question">Preparing questions...</h2>
+            <div id="option-container"></div>
+            <p style="margin-top: 20px; font-weight: 600; color: #3b8beb;">Score: <span id="live-score">0</span></p>
+        </div>
+
+        <!-- Result Card UI -->
+        <div id="result-ui" class="result-box">
+            <div id="result-icon" style="font-size: 4rem; margin-bottom: 15px;"></div>
+            <h2 id="result-title">Quiz Over!</h2>
+            <div id="status-message" class="status-msg"></div>
+            <p class="score-text" id="final-score-display"></p>
+            <div class="btn-group">
+                <button class="action-btn retry-btn" onclick="location.reload()">Try Again</button>
+                <button class="action-btn home-btn" onclick="window.location.href='home.html'">Home Page</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const allData = {
+            science: [
+                { question: "What is the chemical symbol for water?", options: ["H2O", "O2", "CO2", "NaCl"], answer: "H2O" },
+                { question: "What planet is known as the Red Planet?", options: ["Earth", "Mars", "Jupiter", "Venus"], answer: "Mars" },
+                { question: "What gas do plants absorb?", options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"], answer: "Carbon Dioxide" }
+            ],
+            mathematics: [
+                { question: "Square root of 16?", options: ["2", "4", "8", "16"], answer: "4" },
+                { question: "Value of Pi (approx)?", options: ["3.14", "2.14", "3.00", "3.41"], answer: "3.14" }
+            ],
+            history: [
+                { question: "Who founded the Mughal Empire?", options: ["Akbar", "Babur", "Humayun", "Sher Shah"], answer: "Babur" }
+            ],
+            gk: [
+                { question: "Largest desert in the world?", options: ["Sahara", "Gobi", "Antarctic", "Thar"], answer: "Antarctic" }
+            ]
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const category = params.get("category") || "science";
+        const questions = allData[category];
+        
+        let currentIdx = 0;
+        let score = 0;
+        let timer;
+        let timeLeft = 15;
+
+        function startTimer() {
+            timeLeft = 15;
+            document.getElementById("time-left").textContent = timeLeft;
+            clearInterval(timer);
+            timer = setInterval(() => {
+                timeLeft--;
+                document.getElementById("time-left").textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    autoNext();
+                }
+            }, 1000);
+        }
+
+        function loadQuestion() {
+            startTimer();
+            const data = questions[currentIdx];
+            document.getElementById("category-title").textContent = category + " Quiz";
+            document.getElementById("question").textContent = data.question;
+            document.getElementById("live-score").textContent = score;
+
+            const container = document.getElementById("option-container");
+            container.innerHTML = "";
+            
+            data.options.forEach(opt => {
+                const btn = document.createElement("button");
+                btn.className = "option-btn";
+                btn.textContent = opt;
+                btn.onclick = () => checkAnswer(btn, opt);
+                container.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(btn, selected) {
+            clearInterval(timer);
+            const correct = questions[currentIdx].answer;
+            const btns = document.querySelectorAll(".option-btn");
+            btns.forEach(b => b.classList.add("disabled"));
+
+            if (selected === correct) {
+                btn.classList.add("correct");
+                score++;
+            } else {
+                btn.classList.add("wrong");
+                btns.forEach(b => { if(b.textContent === correct) b.classList.add("correct"); });
+            }
+            setTimeout(next, 1500);
+        }
+
+        function autoNext() {
+            const correct = questions[currentIdx].answer;
+            document.querySelectorAll(".option-btn").forEach(b => {
+                b.classList.add("disabled");
+                if(b.textContent === correct) b.classList.add("correct");
+            });
+            setTimeout(next, 1500);
+        }
+
+        function next() {
+            currentIdx++;
+            if (currentIdx < questions.length) loadQuestion();
+            else showResult();
+        }
+
+        function showResult() {
+            document.getElementById("quiz-ui").style.display = "none";
+            const resUI = document.getElementById("result-ui");
+            resUI.style.display = "block";
+            
+            const percentage = (score / questions.length) * 100;
+            const statusBox = document.getElementById("status-message");
+            const iconBox = document.getElementById("result-icon");
+
+            document.getElementById("final-score-display").innerText = `Final Score: ${score} out of ${questions.length}`;
+
+            if (percentage >= 50) {
+                statusBox.innerText = "Congratulations! You Passed 🏆";
+                statusBox.className = "status-msg pass";
+                iconBox.innerHTML = "🥳";
+            } else {
+                statusBox.innerText = "Better Luck Next Time! You Failed ❌";
+                statusBox.className = "status-msg fail";
+                iconBox.innerHTML = "😔";
+            }
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
