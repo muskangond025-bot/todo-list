@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f7f6;
+  color: #333;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Mode Selection Buttons */
+#mode-selection {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 15px;
+}
+
+#mode-selection button {
+  padding: 12px 25px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 2px solid #4a90e2;
+  border-radius: 30px;
+  background-color: white;
+  color: #4a90e2;
+  transition: all 0.3s ease;
+}
+
+#mode-selection button:hover {
+  background-color: #4a90e2;
+  color: white;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+#status {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  min-height: 35px;
+}
+
+#congrats {
+  color: #27ae60;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Board Styling */
+#board {
+  display: grid;
+  gap: 8px;
+  background-color: #34495e;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  /* JS will handle width, but we keep it safe here */
+  max-width: 95vw;
+}
+
+.cell {
+  aspect-ratio: 1 / 1; /* Squre cells */
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 8px;
+  color: #3498db; /* Default Blue for X */
+}
+
+/* Color for O */
+.cell-o {
+  color: #e74c3c !important; /* Red for O */
+}
+
+/* Bottom Controls */
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+#restart,
+#next-level {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}
+
+#restart {
+  background-color: #95a5a6;
+}
+#next-level {
+  background-color: #2ecc71;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 600px) {
+  .cell {
+    font-size: 1.8rem;
+  }
+
+  #mode-selection {
+    flex-direction: row; /* Mobile par bhi row mein rakhein agar jagah hai */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #mode-selection button {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .cell {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1 id="level-display">Level: 3x3</h1>
+
+      <div id="mode-selection">
+        <button id="pvc-mode">Play vs Computer</button>
+        <button id="pvp-mode">Play vs Friend</button>
+      </div>
+
+      <div id="status">Player X's Turn</div>
+      <div id="congrats"></div>
+
+      <div class="board" id="board"></div>
+
+      <!-- In buttons ka hona zaroori hai JS ke liye -->
+      <div class="controls">
+        <button id="restart">Restart Game</button>
+        <button id="next-level" style="display: none">Next Level</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
